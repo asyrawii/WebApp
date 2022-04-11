@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@using WebApp.Models
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to MyWebApp</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@foreach (User usr in Model.Users)
+{
+    <h2>@usr.Name</h2>
+    <h2>@usr.DOB</h2>
+    <h2>@usr.UserID</h2>
+}
+<div class="card-columns">
+    @foreach(Monkey monke in Model.Monkeys)
+            {
+    <div class="card">
+        <div class="card-img" style="background-image: url('@monke.ImageUrl'); height:300px;background-position:center; background-repeat:no-repeat"></div>
+        <div class="card-body">
+            <h5 class="card-title">@monke.Name</h5>
+        </div>
+    </div>
+
+            }
+</div>
