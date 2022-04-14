@@ -1,0 +1,31 @@
+﻿@page
+@using WebApp.Models
+@model WebApp.Pages.EntryPageModel
+@{
+}
+
+<h2>Entry Page</h2>
+
+<form method="post">
+    <input type="text" asp-for="usr.Name" placeholder="Name" /><br />
+    <input type="text" asp-for="usr.NRIC" placeholder="NRIC (without '-')" />
+    <input type="text" asp-for="usr.DOB" placeholder="DOB (dd/mm/yyyy)" />
+    <button type="submit">Submit</button>
+</form>
+
+@*<form method="post">
+    <input type="text" asp-for="updtUser.UserID" placeholder="UserID" /><br />
+    <input type="text" asp-for="updtUser.NRIC" placeholder="NRIC (without '-')" />
+    <input type="text" asp-for="updtUser.DOB" placeholder="DOB (dd/mm/yyyy)" />
+    <button type="submit">Submit</button>
+</form>*@
+
+<div>
+    @foreach (User usr in Model.usrList)
+    {
+        <h5>@usr.Name</h5>
+        <h6>@usr.NRIC</h6>
+        <h6>@usr.DOB</h6>
+        <h6>@usr.Age</h6>
+    }
+</div>

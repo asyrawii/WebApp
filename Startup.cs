@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Services;
 using WebApp.Models;
+using MyForest9ePermit.Server.Services;
 
 namespace WebApp
 {
@@ -28,7 +29,10 @@ namespace WebApp
             services.AddRazorPages();
             services.AddControllers();
             services.AddTransient<JsonFileServices>();
-            
+            services.AddTransient<DatabaseService>();
+            services.AddTransient<DBConnectionService>();
+            services.AddTransient<HttpService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
