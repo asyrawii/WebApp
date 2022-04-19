@@ -183,7 +183,7 @@ namespace MyForest9ePermit.Server.Services
 
                 DataSet ds = new DataSet();
                 Int32 maxIdx = MaxRecNo("User");
-                string sql = @"UPDATE {tableName} SET NRIC = {NRIC}, DOB = {DOB} WHERE(UserId = {UserId});";
+                string sql = @"UPDATE {tableName} SET Name = {Name}, NRIC = {NRIC}, DOB = {DOB} WHERE(UserId = {UserId});";
 
                 //string sql = @"INSERT INTO {tableName} (UserID, Name, NRIC, DOB, Age) VALUES ({NextID}, '{Name}', '{NRIC}', STR_TO_DATE('{DOB}', '%d/%m/%Y'), {Age});";
                 sql = sql.Replace("{tableName}", "User");

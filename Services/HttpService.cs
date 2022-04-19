@@ -18,14 +18,24 @@ namespace WebApp.Services
             string jsonObj = JsonConvert.SerializeObject(user, Formatting.Indented);
             StringContent content = new StringContent(jsonObj, Encoding.UTF8, "application/json");
 
-            string url = @"https://localhost:44303/dbuser";
+            string url = @"https://localhost:44375/dbuser";
 
             HttpResponseMessage response = await httpClient.PostAsync(url, content);
         }
 
+        public async void UpdateNewUser(User user)
+        { 
+            string jsonObj = JsonConvert.SerializeObject(user, Formatting.Indented);
+            StringContent content = new StringContent(jsonObj, Encoding.UTF8, "application/json");
+
+            string url = @"https://localhost:44375/dbuser";
+
+            HttpResponseMessage response = await httpClient.PutAsync(url, content);
+        }
+
         public async Task<string> GetUserList()
         {
-            string url = @"https://localhost:44303/dbuser/1";
+            string url = @"https://localhost:44375/dbuser/1";
 
             HttpResponseMessage response = await httpClient.GetAsync(url);
 

@@ -56,19 +56,20 @@ namespace WebApp.Controllers
 
         // PUT api/<DBUserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] User value)
         {
-            User selectedUser = DBservice.Find(x => x.UserID == id);
+            //User selectedUser = DBservice.Find(x => x.UserID == id);
 
-            if (selectedUser != null)
-            {
-                if (value.NRIC != null)
-                    selectedUser.NRIC = value.NRIC;
+            //if (selectedUser != null)
+            //{
+            //    if (value.NRIC != null)
+            //        selectedUser.NRIC = value.NRIC;
 
-                if (value.DOB != null)
-                    selectedUser.DOB = value.DOB;
-            }
-            int userCount = DBservice.UpdateUser(value);
+            //    if (value.DOB != null)
+            //        selectedUser.DOB = value.DOB;
+            //}
+            //int userCount = DBservice.UpdateUser(value);
+            DBservice.UpdateUser(value);
         }
 
         // DELETE api/<DBUserController>/5
